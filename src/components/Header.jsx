@@ -1,67 +1,65 @@
- import { Link } from "react-router-dom";
-import logo from "../../src/assest/logo.jpg"
+import { Link } from "react-router-dom";
+import logo from "../../src/assest/logo.jpg";
+import { GrSearch } from "react-icons/gr";
+import { FaRegCircleUser } from "react-icons/fa6";
+import { FaShoppingCart } from "react-icons/fa";
 
-const  Header=() =>{
+const Header = () => {
   return (
-    <div>
-      <div className="navbar bg-base-100">
-  <div className="navbar-start">
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h8m-8 6h16" />
-        </svg>
+    <header className="h-20 shadow-md bg-white fixed w-full z-40">
+      <div className=" h-full container mx-auto flex  items-center px-4 justify-between">
+        <div className="font-semibold text-2xl    ">
+          <Link to={"/"}>GadgetGalaxy</Link>
+        </div>
+
+        <div className=" hidden lg:flex items-center w-11/12 mx-auto mt-5 justify-between max-w-sm border border-gray-300 rounded-full focus-within:border-basic pl-4">
+          <input
+            type="text"
+            placeholder="search product here..."
+            className="w-full outline-none"
+          />
+          <div className="text-lg min-w-[50px] h-8 bg-secondary flex items-center justify-center rounded-r-full text-white">
+            <GrSearch />
+          </div>
+        </div>
+
+        {/* right side  icons */}
+        <div className="flex items-center gap-8 mr-6">
+          <div>
+            <FaRegCircleUser className="text-3xl  cursor-pointer " />
+          </div>
+          <div className="relative ">
+            <span>
+              <FaShoppingCart className="text-2xl" />
+            </span>
+            <div className="bg-basic absolute -top-2 -right-3  text-white  font-semibold rounded-full w-5 h-5 p-1 justify-center flex items-center">
+              <p className=" text-sm ">0</p>
+            </div>
+          </div>
+
+          {/* login -logout */}
+          <div>
+            <button className="px-4 py-2 rounded-full  hover:bg-[#eaae15]  text-gray-600 font-bold bg-basic  transition duration-400 ease-in-out ">
+              Login
+            </button>
+          </div>
+        </div>
       </div>
-      <ul
-        tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
-    </div>
-    <Link className="btn btn-ghost text-xl">
-    <button>GadgetGalaxy</button>
-    </Link>
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
-  </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
-  </div>
-</div>
-    </div>
-  )
-}
+
+      {/* this section is for mobile view*/}
+
+      <div className="lg:hidden flex items-center w-11/12 mx-auto mt-5 justify-between max-w-sm border border-gray-300 rounded-full focus-within:border-basic pl-4">
+        <input
+          type="text"
+          placeholder="search product here..."
+          className="w-full outline-none"
+        />
+        <div className="text-lg min-w-[50px] h-8 bg-secondary flex items-center justify-center rounded-r-full text-white">
+          <GrSearch />
+        </div>
+      </div>
+    </header>
+  );
+};
 
 export default Header;
-
-  
