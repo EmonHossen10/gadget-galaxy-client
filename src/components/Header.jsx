@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../../src/assest/logo.jpg";
+import logo2 from "../../src/assest/logo2.jpg"
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
@@ -8,8 +9,9 @@ const Header = () => {
   return (
     <header className="h-20 shadow-md bg-white fixed w-full z-40">
       <div className=" h-full container mx-auto flex  items-center px-4 justify-between">
-        <div className="font-semibold text-2xl    ">
-          <Link to={"/"}>GadgetGalaxy</Link>
+        <div className="font-semibold lg:text-2xl  text-xl   ">
+          <Link to={"/"}> 
+          <img className="h-20 " src={logo2}  alt="" /></Link>
         </div>
 
         <div className=" hidden lg:flex items-center w-11/12 mx-auto mt-5 justify-between max-w-sm border border-gray-300 rounded-full focus-within:border-basic pl-4">
@@ -24,13 +26,13 @@ const Header = () => {
         </div>
 
         {/* right side  icons */}
-        <div className="flex items-center gap-8 mr-6">
+        <div className="flex items-center gap-3 lg:gap-6 mr-6">
           <div>
-            <FaRegCircleUser className="text-3xl  cursor-pointer " />
+            <FaRegCircleUser className="lg:text-3xl text-xl cursor-pointer " />
           </div>
-          <div className="relative ">
+          <div className="relative  ">
             <span>
-              <FaShoppingCart className="text-2xl" />
+              <FaShoppingCart className="lg:text-2xl " />
             </span>
             <div className="bg-basic absolute -top-2 -right-3  text-white  font-semibold rounded-full w-5 h-5 p-1 justify-center flex items-center">
               <p className=" text-sm ">0</p>
@@ -39,7 +41,7 @@ const Header = () => {
 
           {/* login -logout */}
           <div>
-            <button className="px-4 py-2 rounded-full  hover:bg-[#eaae15]  text-gray-600 font-bold bg-basic  transition duration-400 ease-in-out ">
+            <button className="px-4 py-2 rounded-full ml-1 lg:ml-0 hover:bg-[#eaae15]  text-gray-600 font-bold bg-basic  transition duration-400 ease-in-out ">
               Login
             </button>
           </div>
