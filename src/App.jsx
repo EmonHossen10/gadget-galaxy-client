@@ -1,16 +1,20 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
+  const location = useLocation();
+  console.log(location.pathname);
+  const noHeaderFooter = location.pathname.includes("login");
+
   return (
     <>
-      <Header></Header>
+      {noHeaderFooter || <Header></Header>}
       <main>
         <Outlet></Outlet>
       </main>
-      <Footer></Footer>
+      {noHeaderFooter || <Footer></Footer>}
     </>
   );
 }

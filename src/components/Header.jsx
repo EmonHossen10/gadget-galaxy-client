@@ -1,17 +1,21 @@
-import { Link } from "react-router-dom";
-import logo from "../../src/assest/logo.jpg";
-import logo2 from "../../src/assest/logo2.jpg"
+import { Link,      } from "react-router-dom";
+// import logo from "../../src/assest/logo.jpg";
+import logo2 from "../../src/assest/logo2.jpg";
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
+
+  
+  
   return (
-    <header className="h-20 shadow-md bg-white fixed w-full z-40">
-      <div className=" h-full container mx-auto flex  items-center px-4 justify-between">
+    <header className="h-20 shadow-md bg-white   w-full z-40">
+      <div className=" h-full container mx-auto flex  items-center lg:px-4 justify-between">
         <div className="font-semibold lg:text-2xl  text-xl   ">
-          <Link to={"/"}> 
-          <img className="h-20 " src={logo2}  alt="" /></Link>
+          <Link to={"/"}>
+            <img className="h-20  w-11/12 lg:w-full" src={logo2} alt="" />
+          </Link>
         </div>
 
         <div className=" hidden lg:flex items-center w-11/12 mx-auto mt-5 justify-between max-w-sm border border-gray-300 rounded-full focus-within:border-basic pl-4">
@@ -41,9 +45,11 @@ const Header = () => {
 
           {/* login -logout */}
           <div>
-            <button className="px-4 py-2 rounded-full ml-1 lg:ml-0 hover:bg-[#eaae15]  text-gray-600 font-bold bg-basic  transition duration-400 ease-in-out ">
-              Login
-            </button>
+            <Link to="/login">
+              <button className="px-4 py-2 rounded-full ml-1 lg:ml-0 hover:bg-[#eaae15]  text-gray-600 font-bold bg-basic  transition duration-400 ease-in-out ">
+                Login
+              </button>
+            </Link>
           </div>
         </div>
       </div>
