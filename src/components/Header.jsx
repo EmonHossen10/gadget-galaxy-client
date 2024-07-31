@@ -1,6 +1,6 @@
 import { Link,      } from "react-router-dom";
 // import logo from "../../src/assest/logo.jpg";
-import logo2 from "../../src/assest/logo2.jpg";
+import logo2 from "../../src/asset/logo2.jpg";
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";

@@ -5,16 +5,17 @@ import Footer from "./components/Footer";
 
 function App() {
   const location = useLocation();
-  console.log(location.pathname);
+  // console.log(location.pathname)
   const noHeaderFooter = location.pathname.includes("login");
+  const noHeaderFooterS = location.pathname.includes("sign-up");
 
   return (
     <>
-      {noHeaderFooter || <Header></Header>}
+      {noHeaderFooter || noHeaderFooterS || <Header></Header>}
       <main>
         <Outlet></Outlet>
       </main>
-      {noHeaderFooter || <Footer></Footer>}
+      {noHeaderFooter || noHeaderFooterS || <Footer></Footer>}
     </>
   );
 }
